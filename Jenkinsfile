@@ -2,27 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('System Info') {
             steps {
-                echo 'Code checked out from GitHub'
+                sh 'hostname'
+                sh 'whoami'
+                sh 'uptime'
             }
         }
 
-        stage('Build') {
+        stage('Workspace Check') {
             steps {
-                echo 'Building the application'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application'
+                sh 'ls -l'
             }
         }
     }
