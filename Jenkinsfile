@@ -2,22 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+        stage('Triggered by Webhook') {
             steps {
-                sh 'exit 1'
+                echo "Build triggered automatically by GitHub webhook"
             }
-        }
-    }
-
-    post {
-        always {
-            echo 'Pipeline finished'
-        }
-        success {
-            echo 'Pipeline succeeded'
-        }
-        failure {
-            echo 'Pipeline failed'
         }
     }
 }
