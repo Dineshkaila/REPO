@@ -2,17 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('System Info') {
+        stage('Success Stage') {
             steps {
-                sh 'hostname'
-                sh 'whoami'
-                sh 'uptime'
+                echo 'This stage will pass'
             }
         }
 
-        stage('Workspace Check') {
+        stage('Failing Stage') {
             steps {
-                sh 'ls -l'
+                sh 'exit 1'
             }
         }
     }
