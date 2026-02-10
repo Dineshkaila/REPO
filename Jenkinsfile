@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('This one Triggered by Github Webhook') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/Dineshkaila/REPO.git'
+                echo "Build triggered automatically by GitHub webhook"
             }
         }
+<<<<<<< HEAD
 
         stage('Build') {
             steps {
@@ -30,6 +30,8 @@ pipeline {
         failure {
             echo '❌ Build failed'
         }
+=======
+>>>>>>> 7b8b77b8781da8aeb1dddd1ec736b355929d3aaa
     }
 }
 
