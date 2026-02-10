@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Starting build...'
                 sh '''
-                  echo "Build running on Jenkins"
+                  echo "Build running on Jenkins Server"
                   # Examples:
                   # mvn clean package
                   # npm install && npm run build
